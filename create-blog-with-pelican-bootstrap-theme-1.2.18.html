@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HOW TO CREATE A *_DATA SCIENCE - MACHINE LEARNING - DEEP LEARNING BLOG_* using Python, Jupyter Notebooks, Pelican, and Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Brian Griner">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-2 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 6pt;
+     }
+    </style>
+    <link href="./theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="./theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="./theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./theme/images/apple-touch-icon-114x114.png">
+
+    <link href="./" type="application/atom+xml" rel="alternate" title=" ATOM Feed" />
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="./index.html"> </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                <li><a href="./pages/about-me.html">About me</a></li>
+                <li><a href="./">On the Art of Data Science and Learning Systems</a></li>
+                          <li class="divider-vertical"></li>
+                  <li class="active">
+                    <a href="./category/posts.html">
+						<i class="icon-folder-open icon-large"></i>posts
+					</a>
+                  </li>
+
+                          <ul class="nav pull-right">
+                                <li><a href="./archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span9" id="content">
+<section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to HOW TO CREATE A *_DATA SCIENCE - MACHINE LEARNING - DEEP LEARNING BLOG_* using Python, Jupyter Notebooks, Pelican, and Bootstrap">
+                                        HOW TO CREATE A *_DATA SCIENCE - MACHINE LEARNING - DEEP LEARNING BLOG_* using Python, Jupyter Notebooks, Pelican, and Bootstrap
+                                </a>
+                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+<footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2018-01-02T21:30:00-05:00">
+        <i class="icon-calendar"></i>Tue 02 January 2018
+</abbr>
+<span class="label">By</span>
+<a href="./author/brian-griner-phd.html"><i class="icon-user"></i>Brian Griner, PhD</a>
+<span class="label">Category</span>
+<a href="./category/posts.html"><i class="icon-folder-open"></i>posts</a>.
+
+
+<span class="label">Tags</span>
+	<a href="./tag/python.html"><i class="icon-tag"></i>Python</a>
+	<a href="./tag/data-science.html"><i class="icon-tag"></i>Data Science</a>
+	<a href="./tag/pelican.html"><i class="icon-tag"></i>Pelican</a>
+	<a href="./tag/blog.html"><i class="icon-tag"></i>Blog</a>
+</footer><!-- /.post-info -->                </div>
+                <p>For many who aspire to learn the craft of machine learning (ML) and deep learning (DL), 
+python is language of choice. With Python's outstanding libraries for ML such as 
+Scikit-learn and keras (friendly front-end for Google's TensorFlow) for DL and the ease of
+using Jupyter Notebooks in your browser to run models makes Python an easy choice. But 
+what about creating ML/DL blogs and websites with links to GibHut repositories to showcase
+your analyses and code? After all, R has RStudio and Shiny which make these task very 
+simple and produce beautiful websites and apps. No so much for Pythonista data scientists. 
+There are tools like Django and Flask but they are
+not simple or quick like R Shiny and most data scientists want to spend their time 
+analyzing data rather than learning new tools for web design. </p>
+<p>Enter Pelican. Designed to transform Markdown documents like Jupyter Notebooks into HTML 
+that is ready to host on a web server like github.io via GitHub Pages. Not as simple as R
+Shiny but that difficult either. </p>
+<p>So how do blogs produced by Pelican look? Okay but quite the same as R Shiny. Why? </p>
+<p>The default theme used by Pelican.</p>
+<p>While R Shiny uses Twitter Bootstrap as it's default theme, Pelican does not. Fortunately
+this can be changed with some setup work and the purpose of this post to make it easier
+for a data scientist to accomplish this. What follows is a complete 'recipe' for 
+integrating bootstrap into your Pelican blog for a very professional looking site. Since
+there are many steps involved, the rest of this post will be in outline form to create a
+'cheatsheet' for your reference.</p>
+<p>For more background on using Pelican to create a data scinece blog, see this excellent 
+post from dataquest.io https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/</p>
+<p>QUICKSTART USING MARKDOWN</p>
+<p>A. INSTALL AND ACTIVATE A VIRTUALENV FOR PELICAN BLOG SITE
+- pip install virtualenv
+- virtualenv ~/virtualenvs/pelican
+- cd ~/virtualenvs/pelican
+- . bin/activate</p>
+<p>B. NEXT INSTALL PELICAN &amp; MARKDOWN IN THE VIRTUALENV
+- (pelican) $ pip install pelican
+- (pelican) $ pip install Markdown</p>
+<p>C. NOW RUN PELICAN-QUICKSTART FROM YOUR PELICAN VIRTUALENV AND INSTALL REQUIREMENTS 
+- (pelican) $ pelican-quickstart 
+- (pelican) $ answer questions: defaults except: URL prefix: N, TIMEZONE: America/New_York
+- (pelican) $ pip install -r requirements.txt</p>
+<p>D. CREATE .md FILE IN CONTENT WITH BLOG</p>
+<p>E. START DEVELOPMENT WEB SERVER TO VIEW WEBSITE IN BROWSER
+- (pelican) $ make devserver
+- IN BROWSER OPEN localhost:8000 </p>
+<p>F. TO STOP LOCALHOST SERVER
+- (pelican) $ ./develop_server.sh stop</p>
+<p>HOW TO CONVERT A Jupyter Notebook INTO A BLOG POST</p>
+<p>G. INSTALL JUPYTER PLUGIN AS GIT SUBMODULE
+- (pelican) $ git init
+- (pelican) $ mkdir plugins
+- (pelican) $ git submodule add git://github.com/danielfrg/pelican-ipynb.git plugins/ipynb</p>
+<p>H. MODIFY pelicanconf.py TO INCLUDE THE FOLLOWING LINES:
+- MARKUP = ('md', 'ipynb')</p>
+<ul>
+<li>PLUGIN_PATHS = ['./plugins']</li>
+<li>PLUGINS = ['ipynb.markup']</li>
+</ul>
+<p>I. COPY .ipynb INTO content FOLDER CREATED BY pelican-quickstart</p>
+<p>J. NOW CREATE A FILE WITH THE MARKDOWN META DATA FOR THE POST IN CONTENT DIR USING 
+THE SAME NAME AS .ipynb BUT HAS THE EXTENTION .ipynb-meta </p>
+<p>Title: MY NEW BLOG POST
+Slug: new-post FILENAME
+Date: 2017-12-22 17:30 DATE POSTED
+Category: posts
+Tags: python 'data science' 'machine learning' 'deep learning'
+author: Brian Griner, PhD
+Summary: BRIEF DESCRIPTION OF CONTENT OF NEW POST</p>
+<p>K. GENERATE HTML INTO OUTPUT DIR FROM MARKDOWN FILES IN CONTENT DIR
+- (pelican) $ cd .. (OR ~/virtualenv/pelican)
+- (pelican) $ pelican content TO GERNERATE HTML IN output folder</p>
+<p>L. START PELICAN WEBSERVER AND REVIEW BLOG IN BROWSER: 
+- (pelican) $ cd output
+- (pelican) $ python -m pelican.server
+- (pelican) $ localhost:8000 IN BROWSER TO VIEW POST</p>
+<p>M. CREATE A STATIC HOME PAGE USING MARKDOWN 
+- (pelican) $ mkdir content/pages (ALSO content/posts TO STORE POSTS)
+- USE OVERRIDE FEATURE IN MARKDOWN METADATA FILE:</p>
+<p>Title: Data Science &amp; Learning Systems LLC
+URL:
+save_as: index.html</p>
+<p>Thank you for visiting my blog ...</p>
+<p>USE PELICAN-THEMES TO INSTALL BOOTSTRAP2 THEME </p>
+<p>N. INSTALL PELICAN THEMES FROM GITHUB SITE
+- (pelican) $ git clone --recursive https://github.com/getpelican/pelican-themes ~/pelican-themes</p>
+<p>O. RUN pelican-themes TO LIST INSTALLED THEMES, INSTALL NEW OR REMOVE EXISTING THEMES
+- (pelican) $ pelican-themes -v -l TO LIST INSTALLED THEMES
+- (pelican) $ pelican-themes --install </p>
+<p>P. ADD THEME VARIABLE TO PELICANCONF.PY WITH THEME NAME
+- THEME = "bootstrap2"</p>
+<p>Q. RUN PELICAN WITH -t bootstrap2
+- (pelican) $ pelican content -s pelicanconf.py -t bootstrap2</p>
+<p>R. CHANGE TO OUTPUT DIR, START PELICAN WEBSERVER, AND VIEW SITE IN BROWSER
+- cd output
+- python -m pelican.server
+- OPEN localhost:8000 IN BROWSER </p>
+<p>NOW ADD GITHUB PAGES AS REMOTE TO LOCAL REPO</p>
+<p>S. STOP WEBSERVER IN LOCALHOST 
+- deactivate (./develop_server.sh stop?)</p>
+<p>T. COMMIT FILES TO GITHUB
+- git checkout -b dev CREATE AND SWITCH TO BRANCH dev
+- ghp-import output -b master TO IMPORT ALL FILES FROM output TO master
+- git push origin master TO PUSH CONTENT TO GITHUB</p>
+<p>U. CHECK briangriner.github.io FOR NEW BLOG POST!</p>
+                </div><!-- /.entry-content -->
+        </article>
+</section>
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+<ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><a href="http://getpelican.com/"><i class="icon-external-link"></i>Pelican</a></li>
+    <li><a href="http://python.org/"><i class="icon-external-link"></i>Python.org</a></li>
+    <li><a href="http://jinja.pocoo.org/"><i class="icon-external-link"></i>Jinja2</a></li>
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+    <li><a href="https://www.linkedin.com/in/briangriner/"><i class="icon-LinkedIn-sign icon-large"></i>LinkedIn</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="./category/posts.html">
+    <i class="icon-folder-open icon-large"></i>posts
+</a>
+</li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+
+        <p>The theme is from <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>,
+                   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./theme/js/jquery-1.7.2.min.js"></script>
+    <script src="./theme/js/bootstrap.min.js"></script>
+  </body>
+</html>
