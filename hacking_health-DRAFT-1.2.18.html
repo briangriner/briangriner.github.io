@@ -1174,7 +1174,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load CSV from URL using NumPy</span>
@@ -1209,18 +1209,41 @@ h6:hover .anchor-link {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
-<span class="ansi-green-fg"><ipython-input-5-cb3a36b67c10></span> in <span class="ansi-cyan-fg"><module></span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> 
-<span class="ansi-green-intense-fg ansi-bold">      8</span> <span class="ansi-red-fg"># Load CSV from URL using Pandas</span>
-<span class="ansi-green-fg">----> 9</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> pandas <span class="ansi-green-fg">import</span> read_csv
-<span class="ansi-green-intense-fg ansi-bold">     10</span> url <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">'https://goo.gl/vhm1eU'</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span> names <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">'preg'</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">'plas'</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">'pres'</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">'skin'</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">'test'</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">'mass'</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">'pedi'</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">'age'</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">'class'</span><span class="ansi-blue-fg">]</span>
-
-<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'pandas'</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(768, 9)
+    preg  plas  pres  skin  test  mass   pedi  age  class
+0      6   148    72    35     0  33.6  0.627   50      1
+1      1    85    66    29     0  26.6  0.351   31      0
+2      8   183    64     0     0  23.3  0.672   32      1
+3      1    89    66    23    94  28.1  0.167   21      0
+4      0   137    40    35   168  43.1  2.288   33      1
+5      5   116    74     0     0  25.6  0.201   30      0
+6      3    78    50    32    88  31.0  0.248   26      1
+7     10   115     0     0     0  35.3  0.134   29      0
+8      2   197    70    45   543  30.5  0.158   53      1
+9      8   125    96     0     0   0.0  0.232   54      1
+10     4   110    92     0     0  37.6  0.191   30      0
+11    10   168    74     0     0  38.0  0.537   34      1
+12    10   139    80     0     0  27.1  1.441   57      0
+13     1   189    60    23   846  30.1  0.398   59      1
+14     5   166    72    19   175  25.8  0.587   51      1
+15     7   100     0     0     0  30.0  0.484   32      1
+16     0   118    84    47   230  45.8  0.551   31      1
+17     7   107    74     0     0  29.6  0.254   31      1
+18     1   103    30    38    83  43.3  0.183   33      0
+19     1   115    70    30    96  34.6  0.529   32      1
+(768, 9)
+preg       int64
+plas       int64
+pres       int64
+skin       int64
+test       int64
+mass     float64
+pedi     float64
+age        int64
+class      int64
+dtype: object
+</pre>
 </div>
 </div>
 </div>
@@ -1244,7 +1267,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Class Distribution</span>
@@ -1263,17 +1286,12 @@ h6:hover .anchor-link {
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg"><ipython-input-3-059c60b691cf></span> in <span class="ansi-cyan-fg"><module></span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-red-fg">#data = read_csv(filename, names=names)</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span> 
-<span class="ansi-green-fg">----> 7</span><span class="ansi-red-fg"> </span>class_counts <span class="ansi-blue-fg">=</span> data<span class="ansi-blue-fg">.</span>groupby<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">'class'</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>size<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span> print<span class="ansi-blue-fg">(</span>class_counts<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name 'data' is not defined</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>class
+0    500
+1    268
+dtype: int64
+</pre>
 </div>
 </div>
 </div>
@@ -4488,6 +4506,8 @@ acc: 75.52%
     <li><a href="http://jinja.pocoo.org/"><i class="icon-external-link"></i>Jinja2</a></li>
 <li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
     <li><a href="https://www.linkedin.com/in/briangriner/"><i class="icon-LinkedIn-sign icon-large"></i>LinkedIn</a></li>
+    <li><a href="https://www.researchgate.net/profile/Brian_Griner/publications"><i class="icon-ResearchGate-sign icon-large"></i>ResearchGate</a></li>
+    <li><a href="https://github.com/briangriner"><i class="icon-GitHub-sign icon-large"></i>GitHub</a></li>
 
 <li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
 <li>
