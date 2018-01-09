@@ -283,9 +283,9 @@ Tags: python 'data science' 'machine learning' 'deep learning'</p>
 <p><strong>NOW ADD GITHUB PAGES AS REMOTE TO LOCAL REPO</strong></p>
 <p>S. STOP WEBSERVER IN LOCALHOST </p>
 <ul>
-<li>deactivate (./develop_server.sh stop?)</li>
+<li>deactivate (./develop_server.sh stop)</li>
 </ul>
-<p>T. COMMIT FILES TO GITHUB</p>
+<p>T. COMMIT FILES TO GITHUB USING GHP-IMPORT</p>
 <ul>
 <li>
 <p>git checkout -b dev CREATE AND SWITCH TO BRANCH dev</p>
@@ -295,6 +295,39 @@ Tags: python 'data science' 'machine learning' 'deep learning'</p>
 </li>
 <li>
 <p>git push origin master TO PUSH CONTENT TO GITHUB</p>
+</li>
+</ul>
+<p>U. ALTERNATIVE WAY TO ADD, COMMIT, AND PUSH CONTENT TO GITHUB.IO (EASIER)</p>
+<ul>
+<li>
+<p>CREATE A NEW DIRECTORY -- SEPARATE FROM PELICAN</p>
+</li>
+<li>
+<p>mkdir source-code</p>
+</li>
+<li>
+<p>CREATE NEW REPO CALLED yourusername.github.io ON GITHUB AND ADD A README.md</p>
+</li>
+<li>
+<p>CLONE NEW REPO</p>
+</li>
+<li>
+<p>git clone https://github.com/yourusername/yourusername.github.io</p>
+</li>
+<li>
+<p>COPY THE ENTIRE CONTENTS OF YOUR PELICAN OUTPUT DIR TO THE NEW DIR ~/source-code/yourusername.github.io</p>
+</li>
+<li>
+<p>NOW USE GIT ADD, COMMIT, PUSH INSIDE yourusername.github.io TO PUSH YOUR PELICAN SITE TO GITHUB PAGES</p>
+</li>
+<li>
+<p>git add --all</p>
+</li>
+<li>
+<p>git commit -m "Initial commit"</p>
+</li>
+<li>
+<p>git push -u origin master</p>
 </li>
 </ul>
 <p>U. CHECK yourusername.github.io FOR YOUR NEW BLOG POST!</p>
