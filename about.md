@@ -1,9 +1,8 @@
 Title: About me
 
-[](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/0009-cmls-2012_preview_ecran.jpg/640px-0009-cmls-2012_preview_ecran.jpg "Collections École Polytechnique / Jérémy Barande [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" )
+[](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/0009-cmls-2012_preview_ecran.jpg/640px-0009-cmls-2012_preview_ecran.jpg)
 
-
-**_Brian Griner, PhD, Founder & Managing Partner_**
+**_Brian Griner, PhD, Founder_**
 
 [Brian Griner Resume](https://resume.creddle.io/resume/irrmmbsyws1)
 
