@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> - Data Science</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Brian Griner, Ph.D.">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-2 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 6pt;
+     }
+    </style>
+    <link href="../theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="../theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../theme/images/apple-touch-icon-114x114.png">
+
+    <link href="../" type="application/atom+xml" rel="alternate" title=" ATOM Feed" />
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="../index.html"> </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                <li><a href="../pages/about-me.html">About me</a></li>
+                <li><a href="../">On the Art of Data Science and Learning Systems</a></li>
+                          <li class="divider-vertical"></li>
+                  <li >
+                    <a href="../category/posts.html">
+						<i class="icon-folder-open icon-large"></i>posts
+					</a>
+                  </li>
+
+                          <ul class="nav pull-right">
+                                <li><a href="../archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span9" id="content">
+        <div class="article">
+                <h1><a href="../Partial_Dependence_Plots_presentation-BrianGriner-PrincetonPublicLibrary-4.14.18-updated-4.22.18.html">Using Partial Dependence Plots in Machine Learning to Measure Feature Importance</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2018-04-22T10:00:00-04:00">
+        <i class="icon-calendar"></i>Sun 22 April 2018
+</abbr>
+<span class="label">By</span>
+<a href="../author/brian-griner-phd.html"><i class="icon-user"></i>Brian Griner, Ph.D.</a>
+<span class="label">Category</span>
+<a href="../category/posts.html"><i class="icon-folder-open"></i>posts</a>.
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>Python</a>
+	<a href="../tag/data-science.html"><i class="icon-tag"></i>Data Science</a>
+	<a href="../tag/machine-learning.html"><i class="icon-tag"></i>Machine Learning</a>
+	<a href="../tag/deep-learning.html"><i class="icon-tag"></i>Deep Learning</a>
+	<a href="../tag/statistical-learning.html"><i class="icon-tag"></i>Statistical Learning</a>
+	<a href="../tag/biostatistics.html"><i class="icon-tag"></i>Biostatistics</a>
+	<a href="../tag/diabetes.html"><i class="icon-tag"></i>Diabetes</a>
+	<a href="../tag/health-policy.html"><i class="icon-tag"></i>Health Policy</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Using-Partial-Dependence-Plots-in-ML-to-Measure-Feature-Importance">Using Partial Dependence Plots in ML to Measure Feature Importance<a class="anchor-link" href="#Using-Partial-Dependence-Plots-in-ML-to-Measure-Feature-Importance">¶</a></h1><h3 id="Brian-Griner">Brian Griner<a class="anchor-link" href="#Brian-Griner">¶</a></h3><p>April 14, 2018 (<strong>updated April 22, 2018 to include PDPBox examples</strong>)</p>
+<p>Princeton Public Library, Princeton NJ</p>
+<p><img alt="title" src="http://scikit-learn.org/stable/_images/sphx_glr_plot_partial_dependence_002.png" /></p>
+<hr />
+<h2 id="Outline">Outline<a class="anchor-link" href="#Outline">¶</a></h2><ol>
+<li><p>Problem Statement - How can we better understand Cause and Effect between inputs and outputs when using a complex machine learning or deep learning algorithm?</p>
+</li>
+<li><p>Feature Importance - What is <em>Importance</em>
+                        <a class="btn primary xsmall" href="../Partial_Dependence_Plots_presentation-BrianGriner-PrincetonPublicLibrary-4.14.18-updated-4.22.18.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        <div class="article">
+                <h1><a href="../decoding-health-risk-factors-pre-diabetes-ML-3.5.18.html">Decoding Health with Data Science and Machine Learning</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2018-03-05T06:00:00-05:00">
+        <i class="icon-calendar"></i>Mon 05 March 2018
+</abbr>
+<span class="label">By</span>
+<a href="../author/brian-griner-phd.html"><i class="icon-user"></i>Brian Griner, Ph.D.</a>
+<span class="label">Category</span>
+<a href="../category/posts.html"><i class="icon-folder-open"></i>posts</a>.
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>Python</a>
+	<a href="../tag/data-science.html"><i class="icon-tag"></i>Data Science</a>
+	<a href="../tag/machine-learning.html"><i class="icon-tag"></i>Machine Learning</a>
+	<a href="../tag/deep-learning.html"><i class="icon-tag"></i>Deep Learning</a>
+	<a href="../tag/statistical-learning.html"><i class="icon-tag"></i>Statistical Learning</a>
+	<a href="../tag/biostatistics.html"><i class="icon-tag"></i>Biostatistics</a>
+	<a href="../tag/diabetes.html"><i class="icon-tag"></i>Diabetes</a>
+	<a href="../tag/health-policy.html"><i class="icon-tag"></i>Health Policy</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Decoding-Health-with-Data-Science-and-Machine-Learning">Decoding Health with Data Science and Machine Learning<a class="anchor-link" href="#Decoding-Health-with-Data-Science-and-Machine-Learning">¶</a></h1><p>Examining Risk Factors Associated with Early Onset Type 2 Diabetes Among Pima Indian Women</p>
+<p>by Brian Griner</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img alt="title" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Pima_Indian_woman_winnowing_beans_over_her_head_onto_a_mat_on_the_ground%2C_Gila_River_Reservation%28%3F%29%2C_ca.1902_%28CHS-771%29.jpg/797px-Pima_Indian_woman_winnowing_beans_over_her_head_onto_a_mat_on_the_ground%2C_Gila_River_Reservation%28%3F%29%2C_ca.1902_%28CHS-771%29.jpg" /></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Pima_Indian_woman_winnowing_beans_over_her_head_onto_a_mat_on_the_ground%2C_Gila_River_Reservation%28%3F%29%2C_ca.1902_%28CHS-771%29.jpg/797px-Pima_Indian_woman_winnowing_beans_over_her_head_onto_a_mat_on_the_ground%2C_Gila_River_Reservation%28%3F%29%2C_ca.1902_%28CHS-771%29.jpg">Source: wikimedia</a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<h2 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">¶</a></h2><p>The impact that diabetes has on patients is severe. The Center for Disease Control and Prevention (CDC) cite diabetes as the leading cause of <strong><em>kidney failure</em></strong>, <strong><em>nontramatic limb amputation</em>
+                        <a class="btn primary xsmall" href="../decoding-health-risk-factors-pre-diabetes-ML-3.5.18.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+        <div class="article">
+                <h1><a href="../create-blog-with-pelican-bootstrap-theme-1.2.18.html">HOW TO CREATE A DATA SCIENCE - MACHINE LEARNING - DEEP LEARNING BLOG using Python, Jupyter Notebooks, Pelican, and Bootstrap</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2018-01-02T21:30:00-05:00">
+        <i class="icon-calendar"></i>Tue 02 January 2018
+</abbr>
+<span class="label">By</span>
+<a href="../author/brian-griner-phd.html"><i class="icon-user"></i>Brian Griner, PhD</a>
+<span class="label">Category</span>
+<a href="../category/posts.html"><i class="icon-folder-open"></i>posts</a>.
+
+
+<span class="label">Tags</span>
+	<a href="../tag/python.html"><i class="icon-tag"></i>Python</a>
+	<a href="../tag/data-science.html"><i class="icon-tag"></i>Data Science</a>
+	<a href="../tag/pelican.html"><i class="icon-tag"></i>Pelican</a>
+	<a href="../tag/blog.html"><i class="icon-tag"></i>Blog</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>How to create a blog in Python using Jupyter Notebooks, Pelican static site generator with a Bootstrap theme.</p>
+                        <a class="btn primary xsmall" href="../create-blog-with-pelican-bootstrap-theme-1.2.18.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+
+                <section id="content" class="body">
+                <h1>Pages</h1>
+                        <li><a href="../pages/about-me.html">About me</a></li>
+                        <li><a href="../">On the Art of Data Science and Learning Systems</a></li>
+                </section>
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+<ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><a href="http://getpelican.com/"><i class="icon-external-link"></i>Pelican</a></li>
+    <li><a href="http://python.org/"><i class="icon-external-link"></i>Python.org</a></li>
+    <li><a href="http://jinja.pocoo.org/"><i class="icon-external-link"></i>Jinja2</a></li>
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+    <li><a href="https://www.linkedin.com/in/briangriner/"><i class="icon-LinkedIn-sign icon-large"></i>LinkedIn</a></li>
+    <li><a href="https://www.researchgate.net/profile/Brian_Griner/publications"><i class="icon-ResearchGate-sign icon-large"></i>ResearchGate</a></li>
+    <li><a href="https://github.com/briangriner"><i class="icon-GitHub-sign icon-large"></i>GitHub</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="../category/posts.html">
+    <i class="icon-folder-open icon-large"></i>posts
+</a>
+</li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+
+        <p>The theme is from <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>,
+                   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../theme/js/jquery-1.7.2.min.js"></script>
+    <script src="../theme/js/bootstrap.min.js"></script>
+  </body>
+</html>
